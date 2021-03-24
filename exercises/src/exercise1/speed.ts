@@ -1,4 +1,4 @@
-
+/*
 interface isConvertible<T> {
   addMagnitude(newItem: T): void;
   getMagnitude(index: number): T;
@@ -19,3 +19,4 @@ abstract class Magnitude<T> implements isConvertible<T> {
 class Speed extends Magnitude<T> {
   constructor()
 }
+*/
