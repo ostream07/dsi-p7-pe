@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable indent */
 /* eslint-disable max-len */
 import {isConvertible} from './isConvertible';
 
@@ -31,7 +33,8 @@ export class Temperature implements isConvertible<[TemperatureUnits, number, Tem
       result = (value * 9 / 5) + 32;
       return result;
     } else {
-      console.log('Error, conversor de celsius a otras unidades y no se especifican metros en ningún parámetro');
+      console.log('Error, conversor de celsius a otras unidades y ' +
+                          'no se especifican metros en ningún parámetro');
       return -1;
     }
   }
@@ -40,4 +43,5 @@ export class Temperature implements isConvertible<[TemperatureUnits, number, Tem
 const grades = new Temperature();
 grades.conversion([TemperatureUnits.celsius, 15, TemperatureUnits.kelvin]);
 console.log('Grados celsius: 15');
-console.log('El resultado es: ' + grades.conversion([TemperatureUnits.celsius, 15, TemperatureUnits.kelvin]) + ' kelvin');
+console.log('El resultado es: ' + grades.conversion([TemperatureUnits.celsius,
+                    15, TemperatureUnits.kelvin]) + ' kelvin\n');

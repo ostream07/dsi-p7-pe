@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable indent */
 /* eslint-disable max-len */
 import {isConvertible} from './isConvertible';
 
@@ -41,7 +43,8 @@ export class Distance implements isConvertible<[DistanceUnits, number, DistanceU
       result = data[2];
       return result;
     } else {
-      console.log('Error, conversor a metros y no se especifican metros en ningún parámetro');
+      console.log('Error, conversor a metros y no se especifican' +
+                                            ' metros en ningún parámetro');
       return -1;
     }
   }
@@ -50,4 +53,5 @@ export class Distance implements isConvertible<[DistanceUnits, number, DistanceU
 const distances = new Distance();
 distances.conversion([DistanceUnits.km, 15, DistanceUnits.m]);
 console.log('Kilometros: 15');
-console.log('El resultado es: ' + distances.conversion([DistanceUnits.km, 15, DistanceUnits.m]) + ' metros');
+console.log('El resultado es: ' + distances.conversion([DistanceUnits.km,
+                    15, DistanceUnits.m]) + ' metros\n');
