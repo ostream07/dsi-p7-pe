@@ -11,7 +11,7 @@ import {isConvertible} from './isConvertible';
  * @param km kilómetros
  * @param milla millas
  */
-export enum MagnitudeUnits {
+export enum DistanceUnits {
   mm = 0.001,
   cm = 0.01,
   dm = 0.1,
@@ -29,12 +29,12 @@ export enum MagnitudeUnits {
  * @function conversion Convierte el valor de la primera unidad en lo
  * corespondiente a la segunda que siempre serán metros
  */
-export class Distance implements isConvertible<[MagnitudeUnits, number, MagnitudeUnits]> {
+export class Distance implements isConvertible<[DistanceUnits, number, DistanceUnits]> {
   constructor() {}
-  conversion(data: [MagnitudeUnits, number, MagnitudeUnits]): number {
+  conversion(data: [DistanceUnits, number, DistanceUnits]): number {
     const value: number = data[1];
     let result: number = 0;
-    if (data[0] < data[2] || data[0] > data[2] && data[2] == MagnitudeUnits.m) {
+    if (data[0] < data[2] || data[0] > data[2] && data[2] == DistanceUnits.m) {
       result = data[0] * value;
       return result;
     } else if (data[0] == data[2]) {
@@ -48,6 +48,6 @@ export class Distance implements isConvertible<[MagnitudeUnits, number, Magnitud
 }
 
 const distances = new Distance();
-distances.conversion([MagnitudeUnits.km, 15, MagnitudeUnits.m]);
+distances.conversion([DistanceUnits.km, 15, DistanceUnits.m]);
 console.log('Kilometros: 15');
-console.log('El resultado es: ' + distances.conversion([MagnitudeUnits.km, 15, MagnitudeUnits.m]) + ' metros');
+console.log('El resultado es: ' + distances.conversion([DistanceUnits.km, 15, DistanceUnits.m]) + ' metros');
