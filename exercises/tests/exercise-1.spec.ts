@@ -7,6 +7,7 @@ import {TimeUnits, Time} from "../src/exercise2/time";
 import {SpeedUnits, Speed} from "../src/exercise2/speed";
 import {StrengthUnits, Strenght} from "../src/exercise2/strength";
 import {MassUnits, Mass} from "../src/exercise2/mass";
+import {VolumnUnits, Volumn} from "../src/exercise2/volumn";
 
 describe("distance class tests", () => {
   it("conversion('mm, 10, m') return 0.010", () => {
@@ -96,5 +97,20 @@ describe("mass class tests", () => {
   it("conversion('t, 1, g') return Error", () => {
     const masses = new Mass();
     expect(masses.conversion([MassUnits.t, 1, MassUnits.g])).to.be.equal(-1);
+  });
+});
+
+describe("volumn class tests", () => {
+  it("conversion('km3, 0.2, m3') return 200000000", () => {
+    const volumns = new Volumn();
+    expect(volumns.conversion([VolumnUnits.km3, 0.2, VolumnUnits.m3])).to.be.equal(200000000);
+  });
+  it("conversion('dm3, 1000, m3') return 1", () => {
+    const volumns = new Volumn();
+    expect(volumns.conversion([VolumnUnits.dm3, 1000, VolumnUnits.m3])).to.be.equal(1);
+  });
+  it("conversion('hm3, 100, mm3') return Error", () => {
+    const volumns = new Volumn();
+    expect(volumns.conversion([VolumnUnits.hm3, 100, VolumnUnits.mm3])).to.be.equal(-1);
   });
 });
