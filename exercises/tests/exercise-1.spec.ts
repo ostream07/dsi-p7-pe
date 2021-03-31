@@ -5,6 +5,7 @@ import {DistanceUnits, Distance} from "../src/exercise2/distance";
 import {TemperatureUnits, Temperature} from "../src/exercise2/temperature";
 import {TimeUnits, Time} from "../src/exercise2/time";
 import {SpeedUnits, Speed} from "../src/exercise2/speed";
+import {StrengthUnits, Strenght} from "../src/exercise2/strength";
 
 
 describe("distance class tests", () => {
@@ -68,3 +69,17 @@ describe("speed class tests", () => {
   });
 });
 
+describe("strength class tests", () => {
+  it("conversion('din, 50, n') return 0.0005", () => {
+    const strengths = new Strenght();
+    expect(strengths.conversion([StrengthUnits.din, 50, StrengthUnits.n])).to.be.equal(0.0005);
+  });
+  it("conversion('p, 17, n') return 2.3503387252868797", () => {
+    const strengths = new Strenght();
+    expect(strengths.conversion([StrengthUnits.p, 17, StrengthUnits.n])).to.be.equal(2.3503387252868797);
+  });
+  it("conversion('din, 30, p') return Error", () => {
+    const strengths = new Strenght();
+    expect(strengths.conversion([StrengthUnits.din, 30, StrengthUnits.p])).to.be.equal(-1);
+  });
+});
