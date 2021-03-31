@@ -4,6 +4,8 @@ import {expect} from "chai";
 import {DistanceUnits, Distance} from "../src/exercise2/distance";
 import {TemperatureUnits, Temperature} from "../src/exercise2/temperature";
 import {TimeUnits, Time} from "../src/exercise2/time";
+import {SpeedUnits, Speed} from "../src/exercise2/speed";
+
 
 describe("distance class tests", () => {
   it("conversion('mm, 10, m') return 0.010", () => {
@@ -48,6 +50,21 @@ describe("time class tests", () => {
   it("conversion('min, 10, day') return Error", () => {
     const times = new Time();
     expect(times.conversion([TimeUnits.min, 10, TimeUnits.day])).to.be.equal(-1);
+  });
+});
+
+describe("speed class tests", () => {
+  it("conversion('nu, 10, ms') return 19.4384", () => {
+    const velocity = new Speed();
+    expect(velocity.conversion([SpeedUnits.nu, 12, SpeedUnits.ms])).to.be.equal(23.32608);
+  });
+  it("conversion('ms, 5, pps') return 1.5239 * 10^-3", () => {
+    const velocity = new Speed();
+    expect(velocity.conversion([SpeedUnits.ms, 5, SpeedUnits.pps])).to.be.equal(0.0015239256324291375);
+  });
+  it("conversion('pps, 10, kmh') return Error", () => {
+    const velocity = new Speed();
+    expect(velocity.conversion([SpeedUnits.pps, 12, SpeedUnits.kmh])).to.be.equal(-1);
   });
 });
 
