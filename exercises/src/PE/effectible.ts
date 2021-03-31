@@ -2,16 +2,18 @@
 /**
  * Interfaz genérica Effectible
  */
-interface Effectible<T> {
+/*
+ interface Effectible<T> {
   add(num1: T, num2: T): number;
   substract(num1: T, num2: T): number;
   multiply(num1: T, num2: T): number;
   divide(num1: T, num2: T): number;
 }
-
+*/
 /**
  * Clase genérica EffectibleCllections que implementa a la interfaz Effectible
  */
+/*
 class EffectibleCollection<T extends Effectible<T>> {
   constructor(protected items: T[]) {}
 
@@ -27,19 +29,21 @@ class EffectibleCollection<T extends Effectible<T>> {
     return this.items.length;
   }
 }
-
+*/
 /**
  * Tipo complejo
  */
-type complex = {
+/*
+ type complex = {
   real: number;
   imaginary: number;
 }
-
+*/
 /**
  * Class Complex
  * @implements Operations with complex numbers
  */
+/*
 class Complex implements Effectible<Complex> {
   public comp: complex;
   constructor(i: number, j: number) {
@@ -63,19 +67,21 @@ class Complex implements Effectible<Complex> {
     return {real: this.comp.real / n1.real, imaginary: this.comp.imaginary / n1.imaginary};
   }
 }
-
+*/
 /**
  * Tipo Rational
  */
-type rational = {
+/*
+ type rational = {
   a: number;
   b: number;
 }
-
+*/
 /**
  * Class Rational
  * @implements Operations with natural numbers
  */
+/*
 class Rational implements Effectible<rational> {
   public rat: rational;
   constructor(i: number, j: number) {
@@ -100,4 +106,4 @@ class Rational implements Effectible<rational> {
   }
 }
 
-
+*/

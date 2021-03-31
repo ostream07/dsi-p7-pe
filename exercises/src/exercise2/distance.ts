@@ -27,17 +27,27 @@ export enum MagnitudeUnits {
  * @param Recibe un dato tipo T como vector con tres valores, dos unidades
  * de longitud y un valor
  * @function conversion Convierte el valor de la primera unidad en lo
- * corespondiente a la segunda
+ * corespondiente a la segunda que siempre serán metros
  */
 export class Distance implements isConvertible<[MagnitudeUnits, number, MagnitudeUnits]> {
   constructor() {}
   conversion(data: [MagnitudeUnits, number, MagnitudeUnits]): number {
     const value: number = data[1];
     let result: number = 0;
-    if (data[0] < data[2]) {
+    if (data[0] < data[2] || data[0] > data[2] && data[2] == MagnitudeUnits.m) {
       result = data[0] * value;
+      return result;
+    } else if (data[0] == data[2]) {
+      result = data[2];
+      return result;
+    } else {
+      console.log('Error, conversor a metros y no se especifican metros en ningún parámetro');
+      return -1;
     }
-    return result;
   }
 }
 
+const distances = new Distance();
+distances.conversion([MagnitudeUnits.km, 15, MagnitudeUnits.m]);
+console.log('Kilometros: 15');
+console.log('El resultado es: ' + distances.conversion([MagnitudeUnits.km, 15, MagnitudeUnits.m]) + ' metros');
