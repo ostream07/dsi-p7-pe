@@ -27,5 +27,8 @@
     "tsc-watch": "^4.2.9",
     "typedoc": "^0.20.30"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "typescript": "^4.2.4"
+  }
 }
