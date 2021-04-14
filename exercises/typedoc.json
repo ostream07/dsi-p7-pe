@@ -1,13 +1,8 @@
 {
     "entryPoints": [
-        "./src/exercise2/isConvertible.ts",
-        "./src/exercise2/distance.ts",
-        "./src/exercise2/mass.ts",
-        "./src/exercise2/speed.ts",
-        "./src/exercise2/strength.ts",
-        "./src/exercise2/volumn.ts",
-        "./src/exercise2/time.ts",
-        "./src/exercise2/temperature.ts"
+        "./src/exercise/strategy.ts",
+        "./src/exercise/bubble.ts"
+        
     ],
     "out": "./docs"
 }
