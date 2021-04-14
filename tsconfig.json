@@ -1,0 +1,12 @@
+{
+    "exclude": [
+      "./exercises/tests",
+      "./node_modules",
+      "./exercises/dist"
+    ],
+    "compilerOptions": {
+      "target": "ES2020",
+      "outDir": "./exercises/dist",
+      "rootDir": "./exercises/src"
+    }
+}
